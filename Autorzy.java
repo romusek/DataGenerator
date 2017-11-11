@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Autorzy {
     static ArrayList<String> imie = new ArrayList<String>();
     static ArrayList<String> nazwisko = new ArrayList<String>();
+    static String tmp1, tmp2;
     static Scanner scanner;
 
     static Integer licznik = 0;
@@ -24,7 +25,9 @@ public class Autorzy {
         }
         for (int i=0; i<Constants.liczbaAutorow; i++){
             licznik++;
-            content = content + licznik.toString() + ';' + getImie() + ';' + getNazwisko() + ';' + '\n';
+            tmp1 = getImie();
+            tmp2 = getNazwisko();
+            content = content + licznik.toString() + ';' +tmp1 + ';' + tmp2 + ';' + genEmail(tmp1, tmp2) + ';' + '\n';
         }
         new ZapisDoPliku("Autorzy.txt", content);
     }
@@ -39,5 +42,8 @@ public class Autorzy {
         Random r = new Random();
         int liczba = r.nextInt(nazwisko.size());
         return nazwisko.get(liczba);
+    }
+    static String genEmail(String im,String naz){
+        return im + '.' + naz + "@gmail.com";
     }
 }
