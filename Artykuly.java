@@ -10,8 +10,8 @@ public class Artykuly {
     static String content = new String();
     public static void main(String[] sdfsfsvs){
         for (int i=0; i<Constants.liczbaArtykulow; i++){
-            content = content + (getIdArtykulu() + ';' + getStreszczenie() + ';' + getTresc() + ';' + getCena() + ';' + getIdWydania()
-                + ';' + getIdRedaktora() + ';' + getIdStatusArtykulu() + ';' + '\n');
+            content = content + (getIdArtykulu().toString() + ';' + getStreszczenie() + ';' + getTresc() + ';' + getCena().toString() + ';' + getIdWydania().toString()
+                + ';' + getIdRedaktora().toString() + ';' + getIdStatusArtykulu().toString() + ';' + '\n');
         }
         new ZapisDoPliku("Artykuly.txt", content);
     }
