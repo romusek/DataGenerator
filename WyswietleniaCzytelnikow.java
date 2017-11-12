@@ -4,12 +4,12 @@ public class WyswietleniaCzytelnikow {
     public static void main(String[]asdd){
         String content = new String();
         for (int i=0; i<Constants.liczbaWyswietlenCzytelnikow; i++){
-            content = content + getIdKategorii().toString() + ';' + getIdArtykulu().toString() + ';' + getDate() + ';' + '\n';
+            content = content + getIdCzytelnika().toString() + ';' + getIdArtykulu().toString() + ';' + getDate() + ';' + '\n';
         }
         new ZapisDoPliku("WyswietleniaCzytelnikow.txt", content);
     }
-    static Integer getIdKategorii(){
-        return new Random().nextInt(Constants.liczbaKategorii) + 1;
+    static Integer getIdCzytelnika(){
+        return new Random().nextInt(Constants.liczbaCzytelnikow) + 1;
     }
     static Integer getIdArtykulu(){
         return new Random().nextInt(Constants.liczbaArtykulow);
