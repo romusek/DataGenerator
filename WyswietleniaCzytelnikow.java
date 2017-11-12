@@ -14,10 +14,17 @@ public class WyswietleniaCzytelnikow {
     static Integer getIdArtykulu(){
         return new Random().nextInt(Constants.liczbaArtykulow);
     }
-    static String getDate(){
+    /*static String getDate(){
         String dzien = new Integer(new Random().nextInt(28) + 1).toString();
         String miesiac = new Integer(new Random().nextInt(12) + 1).toString();
         String rok = new Integer(new Random().nextInt(100) + 1901).toString();
         return new String(dzien + '/' + miesiac + '/' + rok);
+    }*/
+    static String getDate(){
+        Integer dzien = new Integer(new Random().nextInt(28) + 1);
+        Integer miesiac = new Integer(new Random().nextInt(12) + 1);
+        String rok = new Integer(new Random().nextInt(100) + 1901).toString();
+        return new String(rok + (miesiac<10 ? "0" + miesiac.toString():miesiac.toString()) + (dzien<10 ? "0" +
+                dzien.toString():dzien.toString()));//RRRRMMDD
     }
 }
