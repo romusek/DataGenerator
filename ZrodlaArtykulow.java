@@ -1,17 +1,68 @@
+import java.util.ArrayList;
 import java.util.Random;
 
-public class ZrodlaArtykulow {
-    public static void main(String[]asd){
-        String content = new String();
-        for (int i=0; i<Constants.liczbaZrodelArtykulow; i++){
-            content = content + getIdArtykulu().toString() + ';' + getIdZrodla() + ';' + '\n';
-        }
-        new ZapisDoPliku("ZrodlaArtykulow.txt", content);
-    }
-    static Integer getIdArtykulu(){
-        return new Random().nextInt(Constants.liczbaArtykulow) + 1;
-    }
-    static Integer getIdZrodla(){
-        return new Random().nextInt(Constants.liczbaZrodel) + 1;
+public class ZrodlaArtykulow
+{
+    public static void main(String[] sdfsfsvs)
+    {
+        new GenerateZrodlaArtykulow().generuj();
     }
 }
+
+class GenerateZrodlaArtykulow
+{
+    int licznik = 0;
+    ArrayList<WierszZrodlaArtykulow> tabela = new ArrayList<>(Constants.liczbaZrodelArtykulow);
+    public void generuj()
+    {
+        WierszZrodlaArtykulow wiersz;
+        for (int i = 0; i < Constants.liczbaZrodelArtykulow; i++)
+        {
+            do
+            {
+                wiersz = new WierszZrodlaArtykulow(getIdArtykulu(), getIdZrodla());
+            }
+            while (tabela.contains(wiersz));
+
+            tabela.add(wiersz);
+        }
+
+        String content = new String();
+
+        for (int i=0; i<Constants.liczbaZrodelArtykulow; i++)
+        {
+            wiersz = tabela.get(i);
+            content = content + (wiersz.idArtykulu + ';' + wiersz.idZrodla + ';' + '\n');
+        }
+
+        new ZapisDoPliku("ZrodlaArtykulow.txt", content);
+
+    }
+
+    Integer getIdArtykulu(){
+        return new Random().nextInt(Constants.liczbaArtykulow) + 1;
+    }
+    Integer getIdZrodla(){
+        return new Random().nextInt(Constants.liczbaZrodel) + 1;
+    }
+
+    private class WierszZrodlaArtykulow
+    {
+        public int idArtykulu;
+        public int idZrodla;
+
+        public WierszZrodlaArtykulow(int idAutora, int idArtykulu)
+        {
+            this.idArtykulu = idAutora;
+            this.idZrodla = idArtykulu;
+        }
+
+        @Override
+        public boolean equals(Object obj)
+        {
+            WierszZrodlaArtykulow wiersz = (WierszZrodlaArtykulow) obj;
+            return idArtykulu == wiersz.idArtykulu && idZrodla == wiersz.idZrodla;
+        }
+    }
+}
+
