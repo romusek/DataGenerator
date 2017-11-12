@@ -18,4 +18,9 @@ public class Constants {
     final static Integer liczbaSlowKluczowychArtykolow = 5000;
     final static Integer liczbaStatusRecenzji = 7;
     final static Integer liczbaTransakcji = 10000;
+    final static Integer liczbaTypuZrodla = 4;
+    final static Integer liczbaWyswietlenCzytelnikow = 10000;
+    final static Integer liczbaWyswietlenGosci = 15000;
+    final static Integer liczbaZrodel = 50;
+    final static Integer liczbaZrodelArtykulow = 100;
 }
