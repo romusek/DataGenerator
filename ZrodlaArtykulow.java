@@ -32,7 +32,7 @@ class GenerateZrodlaArtykulow
         for (int i=0; i<Constants.liczbaZrodelArtykulow; i++)
         {
             wiersz = tabela.get(i);
-            content = content + (wiersz.idArtykulu + ';' + wiersz.idZrodla + '\n');
+            content = content + (wiersz.idArtykulu.toString() + ';' + wiersz.idZrodla.toString() + '\n');
         }
 
         new ZapisDoPliku("ZrodlaArtykulow.csv", content);
@@ -48,8 +48,8 @@ class GenerateZrodlaArtykulow
 
     private class WierszZrodlaArtykulow
     {
-        public int idArtykulu;
-        public int idZrodla;
+        public Integer idArtykulu;
+        public Integer idZrodla;
 
         public WierszZrodlaArtykulow(int idAutora, int idArtykulu)
         {
@@ -61,7 +61,7 @@ class GenerateZrodlaArtykulow
         public boolean equals(Object obj)
         {
             WierszZrodlaArtykulow wiersz = (WierszZrodlaArtykulow) obj;
-            return idArtykulu == wiersz.idArtykulu && idZrodla == wiersz.idZrodla;
+            return idArtykulu.equals(wiersz.idArtykulu) && idZrodla.equals(wiersz.idZrodla);
         }
     }
 }

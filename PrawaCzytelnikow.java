@@ -38,7 +38,8 @@ class GeneratePrawaCzytelnikow
         for (int i=0; i<Constants.liczbaPrawCzytelnikow; i++)
         {
             wiersz = tabela.get(i);
-            content = content + (wiersz.idWlasciciela + ';' + wiersz.idCzytelnika + ';' + wiersz.idTypuPrawa + '\n');
+            content = content + (wiersz.idWlasciciela.toString() + ';' + wiersz.idCzytelnika.toString() + ';'
+                    + wiersz.idTypuPrawa.toString() + ';' + wiersz.getDate() + '\n');
         }
 
         new ZapisDoPliku("PrawaCzytelnikow.csv", content);
@@ -58,9 +59,9 @@ class GeneratePrawaCzytelnikow
 
     private class WierszPrawaCzytelnikow
     {
-        public int idWlasciciela;
-        public int idCzytelnika;
-        public int idTypuPrawa;
+        public Integer idWlasciciela;
+        public Integer idCzytelnika;
+        public Integer idTypuPrawa;
 
         public WierszPrawaCzytelnikow(int idWlasciciela, int idCzytelnika, int idTypuPrawa)
         {
@@ -74,6 +75,13 @@ class GeneratePrawaCzytelnikow
         {
             WierszPrawaCzytelnikow wiersz = (WierszPrawaCzytelnikow) obj;
             return idWlasciciela == wiersz.idWlasciciela && idCzytelnika == wiersz.idCzytelnika && idTypuPrawa == wiersz.idTypuPrawa;
+        }
+        public String getDate(){
+            Integer dzien = new Integer(new Random().nextInt(28) + 1);
+            Integer miesiac = new Integer(new Random().nextInt(12) + 1);
+            String rok = new Integer(new Random().nextInt(100) + 1901).toString();
+            return new String(rok + (miesiac<10 ? "0" + miesiac.toString():miesiac.toString()) + (dzien<10 ? "0" +
+                    dzien.toString():dzien.toString()));//RRRRMMDD
         }
     }
 }

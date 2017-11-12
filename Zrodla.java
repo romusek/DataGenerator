@@ -38,9 +38,9 @@ public class Zrodla {
         return "Pozycje";
     }
     static String getLink(){
-        return "pornhub.com";
+        return "waznerzeczy.pl";
     }
     static Integer getIdTypu(){
-        return new Random().nextInt(Constants.liczbaTypuZrodla);
+        return new Random().nextInt(Constants.liczbaTypuZrodla) + 1;
     }
 }

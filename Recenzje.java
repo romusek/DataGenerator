@@ -8,7 +8,7 @@ public class Recenzje {
         for (int i=0; i<Constants.liczbaRecenzji; i++){
             licznik++;
             content = content + licznik.toString() + ';' + getOcenaArtykulu().toString() + ';' + getIdArtykulu().toString()
-                    + getIdStatusuRecenzji().toString() + ';' + getIdRecenzenta().toString() + ';' + getIdRedaktora() + '\n';
+                    + ';' + getIdStatusuRecenzji().toString() + ';' + getIdRecenzenta().toString() + ';' + getIdRedaktora() + '\n';
         }
         new ZapisDoPliku("Recenzje.csv", content);
     }
@@ -26,6 +26,6 @@ public class Recenzje {
         return new Random().nextInt(Constants.liczbaRecenzetow) + 1;
     }
     static Integer getIdRedaktora(){
-        return new Random().nextInt(Constants.liczbaRedaktorow) + 1;
+        return new Random().nextInt(Constants.liczbaRedaktorow);
     }
 }

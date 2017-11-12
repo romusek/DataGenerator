@@ -29,10 +29,10 @@ class GenerateTransakcjeArtykulow
 
         String content = new String();
 
-        for (int i=0; i<Constants.liczbaTransakcji; i++)
+        for (int i=0; i<Constants.getLiczbaTransakcjiArtykulow; i++)
         {
             wiersz = tabela.get(i);
-            content = content + (wiersz.idTransakcji + ';' + wiersz.idArtykulu+ ';'+ wiersz.data + '\n');
+            content = content + (wiersz.idTransakcji.toString() + ';' + wiersz.idArtykulu.toString()+ ';'+ wiersz.data + '\n');
         }
 
         new ZapisDoPliku("TransakcjeArtykulow.csv", content);
@@ -53,8 +53,8 @@ class GenerateTransakcjeArtykulow
 
     private class WierszTransakcjeArtykulow
     {
-        public int idTransakcji;
-        public int idArtykulu;
+        public Integer idTransakcji;
+        public Integer idArtykulu;
         public String data;
 
         public WierszTransakcjeArtykulow(int idAutora, int idArtykulu, String data)
@@ -68,7 +68,7 @@ class GenerateTransakcjeArtykulow
         public boolean equals(Object obj)
         {
             WierszTransakcjeArtykulow wiersz = (WierszTransakcjeArtykulow) obj;
-            return idTransakcji == wiersz.idTransakcji && idArtykulu == wiersz.idArtykulu;
+            return idTransakcji.equals(wiersz.idTransakcji) && idArtykulu.equals(wiersz.idArtykulu);
         }
     }
 }

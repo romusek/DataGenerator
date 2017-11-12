@@ -32,7 +32,7 @@ class GenerateSlowaKluczoweArtykulow
         for (int i=0; i<Constants.liczbaSlowKluczowychArtykolow; i++)
         {
             wiersz = tabela.get(i);
-            content = content + (wiersz.idSlowoKluczowe + ';' + wiersz. idArtykulu + '\n');
+            content = content + (wiersz.idSlowoKluczowe.toString() + ';' + wiersz. idArtykulu.toString() + '\n');
         }
 
         new ZapisDoPliku("SlowaKluczoweArtykulow.csv", content);
@@ -48,8 +48,8 @@ class GenerateSlowaKluczoweArtykulow
 
     private class WierszSlowaKluczoweArtykulow
     {
-        public int idSlowoKluczowe;
-        public int idArtykulu;
+        public Integer idSlowoKluczowe;
+        public Integer idArtykulu;
 
         public WierszSlowaKluczoweArtykulow(int idAutora, int idArtykulu)
         {

@@ -32,7 +32,7 @@ class GenerateWyswietleniaGosci
         for (int i=0; i<Constants.liczbaWyswietlenGosci; i++)
         {
             wiersz = tabela.get(i);
-            content = content + (wiersz.idGoscia + ';' + wiersz.idArtykulu + '\n');
+            content = content + (wiersz.idGoscia.toString() + ';' + wiersz.idArtykulu.toString() + '\n');
         }
 
         new ZapisDoPliku("WyswietleniaGosci.csv", content);
@@ -48,8 +48,8 @@ class GenerateWyswietleniaGosci
 
     private class WierszWyswietleniaGosci
     {
-        public int idGoscia;
-        public int idArtykulu;
+        public Integer idGoscia;
+        public Integer idArtykulu;
 
         public WierszWyswietleniaGosci(int idAutora, int idArtykulu)
         {
@@ -61,7 +61,7 @@ class GenerateWyswietleniaGosci
         public boolean equals(Object obj)
         {
             WierszWyswietleniaGosci wiersz = (WierszWyswietleniaGosci) obj;
-            return idGoscia == wiersz.idGoscia && idArtykulu == wiersz.idArtykulu;
+            return idGoscia.equals(wiersz.idGoscia) && idArtykulu.equals(wiersz.idArtykulu);
         }
     }
 }
