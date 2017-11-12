@@ -27,9 +27,9 @@ public class Autorzy {
             licznik++;
             tmp1 = getImie();
             tmp2 = getNazwisko();
-            content = content + licznik.toString() + ';' +tmp1 + ';' + tmp2 + ';' + genEmail(tmp1, tmp2) + ';' + '\n';
+            content = content + licznik.toString() + ';' +tmp1 + ';' + tmp2 + ';' + genEmail(tmp1, tmp2) + '\n';
         }
-        new ZapisDoPliku("Autorzy.txt", content);
+        new ZapisDoPliku("Autorzy.csv", content);
     }
 
     static String getImie(){

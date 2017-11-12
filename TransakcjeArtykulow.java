@@ -32,10 +32,10 @@ class GenerateTransakcjeArtykulow
         for (int i=0; i<Constants.liczbaTransakcji; i++)
         {
             wiersz = tabela.get(i);
-            content = content + (wiersz.idTransakcji + ';' + wiersz.idArtykulu+ ';'+ wiersz.data+ ';' + '\n');
+            content = content + (wiersz.idTransakcji + ';' + wiersz.idArtykulu+ ';'+ wiersz.data + '\n');
         }
 
-        new ZapisDoPliku("TransakcjeArtykulow.txt", content);
+        new ZapisDoPliku("TransakcjeArtykulow.csv", content);
 
     }
 
@@ -43,11 +43,12 @@ class GenerateTransakcjeArtykulow
         return new Random().nextInt(Constants.liczbaArtykulow) + 1;
     }
 
-    String getDate(){
-        String dzien = new Integer(new Random().nextInt(28) + 1).toString();
-        String miesiac = new Integer(new Random().nextInt(12) + 1).toString();
+    static String getDate(){
+        Integer dzien = new Integer(new Random().nextInt(28) + 1);
+        Integer miesiac = new Integer(new Random().nextInt(12) + 1);
         String rok = new Integer(new Random().nextInt(100) + 1901).toString();
-        return new String(dzien + '/' + miesiac + '/' + rok);
+        return new String(rok + (miesiac<10 ? "0" + miesiac.toString():miesiac.toString()) + (dzien<10 ? "0" +
+                dzien.toString():dzien.toString()));//RRRRMMDD
     }
 
     private class WierszTransakcjeArtykulow

@@ -11,9 +11,10 @@ public class Artykuly {
     public static void main(String[] sdfsfsvs){
         for (int i=0; i<Constants.liczbaArtykulow; i++){
             content = content + (getIdArtykulu().toString() + ';' + getStreszczenie() + ';' + getTresc() + ';' + getCena().toString() + ';' + getIdWydania().toString()
-                + ';' + getIdRedaktora().toString() + ';' + getIdStatusArtykulu().toString() + ';' + '\n');
+                + ';' + getIdRedaktora().toString() + ';' + getIdStatusArtykulu().toString() + '\n');
         }
-        new ZapisDoPliku("Artykuly.txt", content);
+        //content = content + ';';
+        new ZapisDoPliku("Artykuly.csv", content);
     }
 
     static Integer getIdArtykulu(){
@@ -21,7 +22,7 @@ public class Artykuly {
         return licznik;
     }
     static String getStreszczenie(){
-        return "DUUUPAAAAAA";
+        return "stre";
     }
     static String getTresc(){
         return "00x006";

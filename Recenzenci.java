@@ -34,9 +34,9 @@ public class Recenzenci {
             tmp1 = getImie();
             tmp2 = getNazwisko();
             content = content + licznik.toString() + ';' +tmp1 + ';' + tmp2 + ';' + genEmail(tmp1, tmp2) + ';' +
-                    getIdCzytelnika() + ';' + '\n';
+                    getIdCzytelnika() + '\n';
         }
-        new ZapisDoPliku("Recenzenci.txt", content);
+        new ZapisDoPliku("Recenzenci.csv", content);
     }
 
     static String getImie(){

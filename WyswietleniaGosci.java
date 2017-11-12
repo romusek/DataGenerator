@@ -32,10 +32,10 @@ class GenerateWyswietleniaGosci
         for (int i=0; i<Constants.liczbaWyswietlenGosci; i++)
         {
             wiersz = tabela.get(i);
-            content = content + (wiersz.idGoscia + ';' + wiersz.idArtykulu+ ';' + '\n');
+            content = content + (wiersz.idGoscia + ';' + wiersz.idArtykulu + '\n');
         }
 
-        new ZapisDoPliku("WyswietleniaGosci.txt", content);
+        new ZapisDoPliku("WyswietleniaGosci.csv", content);
 
     }
 

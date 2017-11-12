@@ -7,6 +7,7 @@ public class ZapisDoPliku {
         try{
             PrintWriter pw = new PrintWriter(file);
             pw.write(content);
+            pw.close();
         }catch (Exception e){
             System.out.println("wyjebalo sie");
         }

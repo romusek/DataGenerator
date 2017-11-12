@@ -12,8 +12,8 @@ public class StatusyRecenzji {
         statusyRecenzji[6] = "inne7";
         for (int i=0; i<Constants.liczbaStatusRecenzji; i++){
             licznik++;
-            content = content + licznik.toString() + ';' + statusyRecenzji[i] + ';' + '\n';
+            content = content + licznik.toString() + ';' + statusyRecenzji[i] + '\n';
         }
-        new ZapisDoPliku("StatusyRecenzji.txt", content);
+        new ZapisDoPliku("StatusyRecenzji.csv", content);
     }
 }

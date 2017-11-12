@@ -8,10 +8,9 @@ public class Recenzje {
         for (int i=0; i<Constants.liczbaRecenzji; i++){
             licznik++;
             content = content + licznik.toString() + ';' + getOcenaArtykulu().toString() + ';' + getIdArtykulu().toString()
-                    + getIdStatusuRecenzji().toString() + ';' + getIdRecenzenta().toString() + ';' + getIdRedaktora() +
-                    ';' + '\n';
+                    + getIdStatusuRecenzji().toString() + ';' + getIdRecenzenta().toString() + ';' + getIdRedaktora() + '\n';
         }
-        new ZapisDoPliku("Recenzje.txt", content);
+        new ZapisDoPliku("Recenzje.csv", content);
     }
     
     static Integer getOcenaArtykulu(){

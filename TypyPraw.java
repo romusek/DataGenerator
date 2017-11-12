@@ -4,8 +4,8 @@ public class TypyPraw {
         String content = new String();
         for (int i=0; i<Constants.liczbaTypuPrawa; i++){
             licznik++;
-            content = content + licznik.toString() + ';' + "pupencjal" + ';' + '\n';
+            content = content + licznik.toString() + ';' + "pupencjal" + '\n';
         }
-        new ZapisDoPliku("TypyPraw.txt", content);
+        new ZapisDoPliku("TypyPraw.csv", content);
     }
 }

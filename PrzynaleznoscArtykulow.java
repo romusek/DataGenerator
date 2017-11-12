@@ -5,9 +5,9 @@ public class PrzynaleznoscArtykulow {
     public static void main(String[] as){
         String content = new String();
         for (int i=0; i<Constants.liczbaPrzynaleznosciArtykulow; i++){
-            content = content + getIdKategorii() + ';' + getIdArtykulu() + ';' + '\n';
+            content = content + getIdKategorii() + ';' + getIdArtykulu() + '\n';
         }
-        new ZapisDoPliku("PrzynaleznoscArtykulow.txt", content);
+        new ZapisDoPliku("PrzynaleznoscArtykulow.csv", content);
     }
     static Integer getIdKategorii(){
         return new Random().nextInt(Constants.liczbaKategorii) + 1;

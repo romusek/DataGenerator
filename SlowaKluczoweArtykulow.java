@@ -32,10 +32,10 @@ class GenerateSlowaKluczoweArtykulow
         for (int i=0; i<Constants.liczbaSlowKluczowychArtykolow; i++)
         {
             wiersz = tabela.get(i);
-            content = content + (wiersz.idSlowoKluczowe + ';' + wiersz. idArtykulu+ ';' + '\n');
+            content = content + (wiersz.idSlowoKluczowe + ';' + wiersz. idArtykulu + '\n');
         }
 
-        new ZapisDoPliku("SlowaKluczoweArtykulow.txt", content);
+        new ZapisDoPliku("SlowaKluczoweArtykulow.csv", content);
 
     }
 

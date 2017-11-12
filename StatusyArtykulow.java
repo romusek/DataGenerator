@@ -12,8 +12,8 @@ public class StatusyArtykulow {
         statusyArtykulow[6] = "wydany";
         for (int i=0; i<Constants.liczbaStatusArtykulu; i++){
             licznik++;
-            content = content + licznik.toString() + ';' + statusyArtykulow[i] + ';' + '\n';
+            content = content + licznik.toString() + ';' + statusyArtykulow[i] + '\n';
         }
-        new ZapisDoPliku("StatusyArtykulow.txt", content);
+        new ZapisDoPliku("StatusyArtykulow.csv", content);
     }
 }

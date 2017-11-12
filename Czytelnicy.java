@@ -27,9 +27,9 @@ public class Czytelnicy {
             licznik++;
             tmp1 = getImie();
             tmp2 = getNazwisko();
-            content = content + licznik.toString() + ';' +tmp1 + ';' + tmp2 + ';' + genEmail(tmp1, tmp2) + ';' + '\n';
+            content = content + licznik.toString() + ';' +tmp1 + ';' + tmp2 + ';' + genEmail(tmp1, tmp2) + '\n';
         }
-        new ZapisDoPliku("Czytelnicy.txt", content);
+        new ZapisDoPliku("Czytelnicy.csv", content);
     }
 
     static String getImie(){

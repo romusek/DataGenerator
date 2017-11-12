@@ -32,10 +32,10 @@ class GenerateZrodlaArtykulow
         for (int i=0; i<Constants.liczbaZrodelArtykulow; i++)
         {
             wiersz = tabela.get(i);
-            content = content + (wiersz.idArtykulu + ';' + wiersz.idZrodla + ';' + '\n');
+            content = content + (wiersz.idArtykulu + ';' + wiersz.idZrodla + '\n');
         }
 
-        new ZapisDoPliku("ZrodlaArtykulow.txt", content);
+        new ZapisDoPliku("ZrodlaArtykulow.csv", content);
 
     }
 

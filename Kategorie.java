@@ -6,9 +6,9 @@ public class Kategorie {
         String content = new String();
         for (int i=0; i<Constants.liczbaKategorii + 1; i++){
             licznik++;
-            content = content + licznik + ';' + "CIPAAAA" + ';' + "\n";
+            content = content + licznik + ';' + "Matematyka" + "\n";
         }
-        new ZapisDoPliku("Kategorie.txt", content);
+        new ZapisDoPliku("Kategorie.csv", content);
     }
     static Integer getIdKategorii() {
         return new Random().nextInt(Constants.liczbaKategorii) + 1;

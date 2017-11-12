@@ -8,9 +8,9 @@ public class Zrodla {
             licznik++;
             content = content + licznik.toString() + ';' + getAutor() + ';' + getTytul() + ';' + getRokWydania().toString()
                     + ';' + getMiejsceWydania() + ';' + getNazwaCzasopisma() + ';' + getDate() + ';' + getTytulRozdzialu()
-                    + ';' + getLink() + ';' + getDate() + ';' + getIdTypu().toString() + ';' + '\n';
+                    + ';' + getLink() + ';' + getDate() + ';' + getIdTypu().toString() + '\n';
         }
-        new ZapisDoPliku("Zrodla.txt", content);
+        new ZapisDoPliku("Zrodla.csv", content);
     }
     static String getAutor(){
         return "maskraaletododupydziala";
@@ -28,10 +28,11 @@ public class Zrodla {
         return "PlayBoy";
     }
     static String getDate(){
-        String dzien = new Integer(new Random().nextInt(28) + 1).toString();
-        String miesiac = new Integer(new Random().nextInt(12) + 1).toString();
+        Integer dzien = new Integer(new Random().nextInt(28) + 1);
+        Integer miesiac = new Integer(new Random().nextInt(12) + 1);
         String rok = new Integer(new Random().nextInt(100) + 1901).toString();
-        return new String(dzien + '/' + miesiac + '/' + rok);
+        return new String(rok + (miesiac<10 ? "0" + miesiac.toString():miesiac.toString()) + (dzien<10 ? "0" +
+                dzien.toString():dzien.toString()));//RRRRMMDD
     }
     static String getTytulRozdzialu(){
         return "Pozycje";

@@ -34,9 +34,9 @@ public class Redaktorzy {
             tmp1 = getImie();
             tmp2 = getNazwisko();
             content = content + licznik.toString() + ';' +tmp1 + ';' + tmp2 + ';' + genEmail(tmp1, tmp2) + ';' +
-                    getIdCzytelnika() + ';' + '\n';
+                    getIdCzytelnika() + '\n';
         }
-        new ZapisDoPliku("Redaktorzy.txt", content);
+        new ZapisDoPliku("Redaktorzy.csv", content);
     }
 
     static String getImie(){

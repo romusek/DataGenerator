@@ -4,8 +4,8 @@ public class TypyZrodel {
         String content = new String();
         for (int i=0; i<Constants.liczbaTypuZrodla; i++){
             licznik++;
-            content = content + licznik.toString() + ';' + "mazurowiesanajlepsinaswiecie" + ';' + '\n';
+            content = content + licznik.toString() + ';' + "mazurowiesanajlepsinaswiecie" + '\n';
         }
-        new ZapisDoPliku("TypyZrodel.txt", content);
+        new ZapisDoPliku("TypyZrodel.csv", content);
     }
 }

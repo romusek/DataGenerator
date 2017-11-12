@@ -38,10 +38,10 @@ class GeneratePrawaCzytelnikow
         for (int i=0; i<Constants.liczbaPrawCzytelnikow; i++)
         {
             wiersz = tabela.get(i);
-            content = content + (wiersz.idWlasciciela + ';' + wiersz.idCzytelnika + ';' + wiersz.idTypuPrawa + ';' + '\n');
+            content = content + (wiersz.idWlasciciela + ';' + wiersz.idCzytelnika + ';' + wiersz.idTypuPrawa + '\n');
         }
 
-        new ZapisDoPliku("PrawaCzytelnikow.txt", content);
+        new ZapisDoPliku("PrawaCzytelnikow.csv", content);
 
     }
 

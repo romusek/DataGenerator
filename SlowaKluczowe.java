@@ -4,8 +4,8 @@ public class SlowaKluczowe {
         String content = new String();
         for (int i=0; i<Constants.liczbaSlowKluczowych; i++){
             licznik++;
-            content = content + licznik.toString() + ';' + "KOCHAMYBAZYDANYCH" + ';' + '\n';
+            content = content + licznik.toString() + ';' + "KOCHAMYBAZYDANYCH" + '\n';
         }
-        new ZapisDoPliku("SlowaKluczowe.txt", content);
+        new ZapisDoPliku("SlowaKluczowe.csv", content);
     }
 }

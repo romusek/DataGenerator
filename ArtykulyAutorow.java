@@ -35,7 +35,7 @@ class GenerateArtykulyAutorow
             content = content + (wiersz.idAutora + ';' + wiersz. idArtykulu+ ';' + '\n');
         }
 
-        new ZapisDoPliku("ArtykulyAutorow.txt", content);
+        new ZapisDoPliku("ArtykulyAutorow.csv", content);
 
     }
 
