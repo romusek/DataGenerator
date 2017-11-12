@@ -14,4 +14,8 @@ public class Constants {
     final static Integer liczbaRecenzetow = 300;
     final static Integer liczbaRecenzji = 700;
     final static Integer skalaOcen = 10;
+    final static Integer liczbaSlowKluczowych = 100;
+    final static Integer liczbaSlowKluczowychArtykolow = 5000;
+    final static Integer liczbaStatusRecenzji = 7;
+    final static Integer liczbaTransakcji = 10000;
 }
