@@ -21,9 +21,3 @@ public class PrawaCzytelnikow {
     }
 
 }
-/*
-*           TO SIĘ MOZE NAM SPIERDOLIC
-* o co chodzi tu z idWlasciciela??? ilu jestr tych wlascicieli?
-* z tego by wynikalo ze mimo wszystko mamy nie jednego wlasciciela
-* moim zdaniem jest zbedne
-* */
